@@ -1,0 +1,18 @@
+server:
+  port: 7004
+dubbo:
+  application:
+    name: dubbo-consumer    #��������
+  registry:
+    protocol: zookeeper     #ע�����ĵ�Э��
+    address: 192.168.184.128:2181 #ע�����ĵĵ�ַ
+  protocol:
+    name: dubbo             #ͨ��Э��
+    port: 20880             #ͨ�Ŷ˿�
+  monitor:
+    protocol: registry      #���Ӽ������
+
+rocketmq:
+  name-server: 192.168.184.128:9876
+  producer:
+    group: my-group

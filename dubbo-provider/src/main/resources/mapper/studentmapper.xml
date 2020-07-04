@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.dubboprovider.student.mapper.StudentMapper">
+
+    <sql id="baseSelect">
+        select id,
+               name,
+               age
+               from student
+    </sql>
+
+    <sql id="synamicWhere">
+        <where>
+            <if test="entity.id != null">
+                and id = #{entity.id}
+            </if>
+            <if test="entity.name != null">
+                and id = #{entity.name}
+            </if>
+            <if test="entity.age != null">
+                and id = #{entity.age}
+            </if>
+        </where>
+    </sql>
+
+    <select id="findById" resultType="com.example.dubboprovider.student.entity.Student">
+        <include refid="baseSelect"/>
+        where id = #{id}
+    </select>
+
+</mapper>
